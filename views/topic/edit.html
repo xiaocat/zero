@@ -1,0 +1,28 @@
+<% include ../layout/header %>
+
+<link href="/libs/editor/editor.css" rel="stylesheet" type="text/css">
+<script src="/libs/editor/editor.js"></script>
+
+<div class="ui segment">
+  <form class="ui form" action="/topic/create" method="post">
+    <div class="field">
+      <lable>标题</label>
+      <input name="title" type="text" placeholder="标题"/>
+    </div>
+    <div class="field">
+      <label>内容</label>
+      <textarea name="content"></textarea>
+    </div>
+    <input class="ui submit button" type="submit" value="提交"/>
+  </form>
+</div>
+
+<script>
+  $(function(){
+    var editor = new Editor();
+    editor.render();
+  });
+</script>
+
+
+<% include ../layout/footer %>
