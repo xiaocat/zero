@@ -22,5 +22,7 @@ exports.create = function(req, res, next){
 };
 
 exports.index = function(req, res, next){
-  res.render('topic/list');
+  Topic.find({}, function(err, data){
+    res.render('topic/list', {list: data});
+  })
 };
